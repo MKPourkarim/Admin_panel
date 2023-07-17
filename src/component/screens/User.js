@@ -1,6 +1,11 @@
+import Header from '../Header'
+import '../../index.css'
 const User = () => {
     return(
-        <h1>Blank page</h1>
+        <div>
+            
+            <h1>Blank page</h1>
+        </div>
     )
 }
 

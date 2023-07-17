@@ -5,46 +5,27 @@ import { FaSignOutAlt } from "react-icons/fa";
 import { TbCopy } from "react-icons/tb";
 import {useState} from 'react'
 
-const Side = () => {
-    const [link, setLink] = useState('User');
+const Side = (props) => {
+    const [title, setTitle] = useState('');
 
-    const clickHandler = (event) => {
-        setLink(event.target.value);
-        console.log(link)
-    } 
+    const clickHandler = (e) => {
+    setTitle(e.target.text);
+    props.onMenuClick(title);
+} 
 
     return(
-        <div className='side' onClick={clickHandler}>
+        <div className='side' >
             <h1 className='title'>Admin Panel</h1>
-            <Link to='/user' className='menu_link'><FaUserLarge />User</Link>
-                
-                
-            <button className='menu_link' value='Table'>   
-                    <FaTableCells />
-                    <p>Tables</p>
-            </button>
-            <button className='menu_link' value='Profile'>
-                <FaUserGear />
-                <p>Profile</p>
-            </button>         
-            <button className='menu_link' value='Logout'>
-                <FaSignOutAlt />
-                <p>Logout</p>
-            </button>
-            <button className='menu_link' value='Uielement'>
-                <FaElementor />
-                <p>UI Elements</p>
-            </button>
-            <button className='menu_link' value='Form'>
-                <FaPencil />
-                <p>Forms</p>
-            </button>
-            <button className='menu_link' value='Pages'>
-                <TbCopy />
-                <p>Pages</p>
-            </button>     
+            <Link to='/user' className='menu_link' onClick={(e)=>clickHandler(e)} ><FaUserLarge />User</Link>
+            <Link to='/tables' className='menu_link' onClick={clickHandler} ><FaTableCells />Tables</Link>
+            <Link to='/profile' className='menu_link' onClick={clickHandler} ><FaUserGear />Profile</Link>
+            <Link to='/logout' className='menu_link' onClick={clickHandler} ><FaSignOutAlt />Logout</Link>
+            <Link to='/uielement' className='menu_link' onClick={clickHandler} ><FaElementor />UI Elements</Link>
+            <Link to='/forms' className='menu_link' onClick={clickHandler} ><FaPencil />Forms</Link>
+            <Link to='/pages' className='menu_link' onClick={clickHandler} ><TbCopy />Pages</Link>  
         </div>
     )
 }
 
 export default Side;
+

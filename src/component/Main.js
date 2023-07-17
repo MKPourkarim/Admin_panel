@@ -1,18 +1,36 @@
 import { Route } from 'react-router-dom'
 import User from './screens/User'
-import User from './screens/UiElement'
-import User from './screens/Tables'
-import User from './screens/Profile'
-import User from './screens/Pages'
-import User from './screens/Logout'
-import User from './screens/Forms'
+import UiElement from './screens/UiElement'
+import Tables from './screens/Tables'
+import Profile from './screens/Profile'
+import Pages from './screens/Pages'
+import Logout from './screens/Logout'
+import Forms from './screens/Forms'
 import '../index.css'
 
 const Main = () => {
     return(
-        <div>
+        <div className='main'>
             <Route path="/User">
                 <User />
+            </Route>
+            <Route path="/UiElement">
+                <UiElement />
+            </Route>
+            <Route path="/Tables">
+                <Tables />
+            </Route>
+            <Route path="/Profile">
+                <Profile />
+            </Route>
+            <Route path="/Pages">
+                <Pages />
+            </Route>
+            <Route path="/Logout">
+                <Logout />
+            </Route>
+            <Route path="/Forms">
+                <Forms />
             </Route>        
         </div>
     )

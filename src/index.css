@@ -12,7 +12,6 @@ body {
 .panel {
   height: 100;
   display: grid;
-  background-color: rgb(146, 176, 176);
   grid-template-columns: 250px 1fr;
   grid-template-rows: 60px 1fr;
   grid-template-areas: 
@@ -35,10 +34,11 @@ body {
 }
 
 .menu_link {
-  width: 240px;
+  width: 180px;
   height: 40px;
   margin-left: 5px;
-  background-color:rgb(183, 206, 206);
+  background-color:rgb(217, 223, 223);
+  color: black;
   padding: 10px 30px;
   border-radius: 3px;
   border: none;
@@ -46,11 +46,12 @@ body {
   display: flex;
   justify-content:space-between;
   align-items: center;
+  text-decoration: none;
 }
 
 
 .menu_link:hover {
-  background-color: rgb(225, 225, 225);
+  background-color: rgb(213, 213, 213);
 }
 
 .header {
@@ -58,8 +59,8 @@ body {
   grid-area: header;
 }
 
-.main{
-  background-color: rgb(227, 227, 227);
+.main {
+  background-color: rgb(238, 237, 237);
   grid-area: main;
 }
  .line {
