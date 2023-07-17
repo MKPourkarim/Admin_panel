@@ -1,4 +1,6 @@
+
 import Panel from './component/Panel'
+
 
 function App() {
   return (

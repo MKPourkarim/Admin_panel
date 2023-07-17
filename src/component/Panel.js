@@ -6,9 +6,9 @@ import '../index.css'
 const Panel = () => {
     return(
         <div className='panel'>
+            <Side/>
             <Header />
-            <Main />
-            <Side />
+            <Main />            
         </div>
     )
 }
