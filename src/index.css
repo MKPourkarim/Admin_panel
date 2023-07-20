@@ -29,6 +29,10 @@ body {
   gap: 5px;
 }
 
+.clicked{
+  background-color: #0162ea;
+}
+
 .title{
   text-align: center;
   position: relative;
@@ -62,12 +66,13 @@ body {
 
 .header {
   background-color: #0162ea;
+  color: #fff;
   grid-area: header;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding-left: 10px;
-  font-size: 2em;
+  padding-left: 15px;
+  font-size: 0.9em;
   font-weight: bold;
 }
 
@@ -75,11 +80,12 @@ body {
   background-color: #e3e3e3;
   grid-area: main;
 }
+
 .table {
   width: 100%;
   border-collapse: collapse;
   background-color: #ffffff;
-  margin: 25px 10px;
+  margin: 20px 5px;
   font-size: 1.1em;
   border-radius: 5px 5px 0 0;
   overflow: hidden;
@@ -100,7 +106,7 @@ body {
 
  .table td, 
  .table th {
-  padding: 10px 15px;
+  padding: 9px 15px;
  } 
 
  .table tbody tr {

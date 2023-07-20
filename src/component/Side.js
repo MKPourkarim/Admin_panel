@@ -7,16 +7,21 @@ import {useState} from 'react'
 
 const Side = (props) => {
     const [title, setTitle] = useState('');
+    const [color, setColor] = useState('');
 
     const clickHandler = (e) => {
-    setTitle(e.target.text);
-    props.onMenuClick(title);
+        setTitle(e.target.text);
+        props.onMenuClick(title);
+        console.log(e)
+        // if (!this.color.includes("clicked")) {
+        //     setColor(current => current + "clicked")
+        // }
 } 
 
     return(
         <div className='side' >
             <h1 className='title'>Admin Panel</h1>
-            <Link to='/user' className='menu_link' onClick={(e)=>clickHandler(e)} ><FaUserLarge /><p>User</p></Link>
+            <Link to='/user' className='menu_link' onClick={clickHandler} ><FaUserLarge /><p>User</p></Link>
             <Link to='/tables' className='menu_link' onClick={clickHandler} ><FaTableCells /><p>Tables</p></Link>
             <Link to='/profile' className='menu_link' onClick={clickHandler} ><FaUserGear /><p>Profile</p></Link>
             <Link to='/logout' className='menu_link' onClick={clickHandler} ><FaSignOutAlt /><p>Logout</p></Link>
