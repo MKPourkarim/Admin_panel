@@ -1,18 +1,17 @@
 import '../../index.css'
 import {useEffect, useState} from 'react'
 import axios from 'axios'
+import Loading from './Loading'
+import Table from './Table'
 
 const User = () => {
     const [data, setData] = useState([])
-    useEffect(()=>{
-        axios.get('https://jsonplaceholder.typicode.com/users')
-        .then(res => setData(res.data))
-        .catch(err => console.log(err))
-    },[])
-    
-    return(
-        <div className='table_div'>
-            <table className="table">
+    const [loading, setLoading] = useState(true)
+
+    const Table = () => {
+        return( 
+            <div>
+                <table className="table">
                 <thead>
                     <tr>
                         <th>Name</th>
@@ -36,6 +35,25 @@ const User = () => {
                     }
                 </tbody>
             </table>
+            </div>
+        )
+    }
+
+    useEffect( ()=>{
+        new Promise(r => setTimeout(r, 500)).then(()=> {
+            axios.get('https://jsonplaceholder.typicode.com/users')
+        .then(res => {
+            setData(res.data)
+            setLoading(false)
+        })
+        .catch(err => console.log(err))
+        });
+        
+        },[])
+    
+    return(
+        <div className='table_div'>
+            {loading ? <Loading className='loadingg'/> :  <Table/>}    
         </div>
     )
 }

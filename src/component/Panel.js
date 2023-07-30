@@ -6,13 +6,10 @@ import '../index.css'
 
 
 const Panel = () => {
-    const [headerTitle, setHeaderTitle] = useState('')
-    const linkClicked = clickedLinkTitle => {
-        console.log(clickedLinkTitle);
-    }
+    
     return(
         <div className='panel'>
-            <Side onMenuClick={linkClicked}/>
+            <Side />
             <Header />
             <Main />            
         </div>
